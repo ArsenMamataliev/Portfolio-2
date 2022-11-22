@@ -1,0 +1,66 @@
+@import './../../../Common/Styles/SASS/variables';
+@import './../../../Common/Styles/SASS/mixins';
+
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  @media (min-width: 667px) {
+    display: none;
+  }
+
+  .closeButton {
+    display: none;
+  }
+
+  .menu {
+    background: $navBgColor;
+    opacity: 0.9;
+    width: 100%;
+    cursor: pointer;
+    .buttonToClose{
+      text-align: right;
+    }
+
+    .iconClose {
+      width: 30px;
+      height: 30px;
+      color: white;
+      text-align: right;
+      padding: 5px;
+
+      &:hover {
+        color: $linksColor;
+      }
+    }
+
+    .linkContainer {
+      color: white;
+      @include font(1.5rem, left);
+      padding: 20px;
+
+      .link {
+        color: $linksColor;
+        opacity: 1;
+      }
+    }
+  }
+
+  .openButton {
+    border: none;
+    opacity: 0.8;
+    color: $linksColor;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+

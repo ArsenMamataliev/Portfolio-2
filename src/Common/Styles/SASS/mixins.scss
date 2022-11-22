@@ -1,0 +1,14 @@
+@import './variables';
+
+@mixin font($fontSize, $textAlign){
+  font-family: $font ;
+  font-size: $fontSize;
+  text-align: $textAlign;
+}
+
+@mixin flex($alignItems, $justifyContent, $flexWrap){
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent ;
+  flex-wrap: $flexWrap;
+}
