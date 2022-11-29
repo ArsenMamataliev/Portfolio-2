@@ -1,3 +1,22 @@
 .searchBox{
-    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+
+    input{
+        width:  300px;
+        height: 40px;
+        padding: 0 10px;
+
+        &[type=text]{
+            font-size: 20px;
+            color: gray;
+        }
+
+        &:focus{
+            border: 3px solid blue;
+            outline: 0;
+        }
+    }
 }

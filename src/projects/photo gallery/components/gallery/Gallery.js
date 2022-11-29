@@ -1,42 +1,32 @@
 import React, {useEffect, useState } from 'react';
-import './Gallery.module.scss';
+import style from './Gallery.module.scss';
 import { createApi } from 'unsplash-js';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectValues, totalPagesFn, totalPhotosFn } from '../../../../features/photoGallery/photoSlice';
+import Photos from '../photocamp/Photos';
 
 const api = createApi({
   accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A',
 });
 
-const PhotoComp = ({ photo }) => {
-    const { user, urls } = photo;
-  
-    return (
-      <>
-        <img className="img" src={urls.regular} alt="photos"/>
-        <a
-          className="credit"
-          target="_blank"
-          rel="noreferrer"
-          href={`https://unsplash.com/@${user.username}`}
-        >
-          {user.name}
-        </a>
-      </>
-    );
-  };
-  
   const Gallery = () => {
     const [data, setPhotosResponse] = useState(null);
-  
+    const select = useSelector(selectValues);
+    const dispatch = useDispatch();
+    
     useEffect(() => {
       api.search
-        .getPhotos({ query: 'cat', orientation: 'landscape' })
+        .getPhotos({query: `${select.query}`, orientation: `${select.orientation}`, perPage: `${select.limit}`, color: `${select.color}`, page: `${select.page}`})
         .then((result) => {
           setPhotosResponse(result);
+          dispatch(totalPagesFn(result.response.total_pages));
+          dispatch(totalPhotosFn(result.response.total))
+          console.log(result);
         })
         .catch(() => {
           console.log('something went wrong!');
         });
-    }, []);
+    }, [select.query, select.orientation, select.limit, select.color, select.page, dispatch]);
   
     if (data === null) {
       return <div>Loading...</div>;
@@ -49,12 +39,10 @@ const PhotoComp = ({ photo }) => {
       );
     } else {
       return (
-        <div className="feed">
-          <ul className="columnUl">
+        <div className={style.wrapper}>
+          <ul className={style.photoContainer}>
             {data.response.results.map((photo) => (
-              <li key={photo.id} className="li">
-                <PhotoComp photo={photo} />
-              </li>
+              <Photos photo={photo} key={photo.id} />
             ))}
           </ul>
         </div>
