@@ -12,7 +12,7 @@ export const MyWorks = () => {
             title: 'Photo Gallery', 
             text: ['React', 'Redux', 'MaterialUI', 'SCSS', 'UnSplash API'],
             imgLink: photoGallery,
-            link: '/photo_gallery'
+            link: '/gallery'
         }, 
         {
             title: 'Booking',
