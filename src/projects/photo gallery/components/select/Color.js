@@ -17,7 +17,7 @@ export default function Color({title, value}) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 80 }}>
+      <FormControl sx={{ m: 1, minWidth: 100 }}>
         <InputLabel id="demo-simple-select-autowidth-label">{title}</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"

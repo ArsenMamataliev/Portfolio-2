@@ -6,11 +6,6 @@
   @include flex(center, flex-end, wrap);
   background-color: $navBgColor;
   width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  opacity: 0.8;
-  color: $bgColor;
   text-decoration: none;
   padding: 0 40px;
   @include font(1.5rem, center);
@@ -21,15 +16,18 @@
   .linkContainer {
     padding: 0 10px;
     cursor: pointer;
+    transition: all 1s ease-in;
     
+    &:hover{
+      border-bottom: 2px solid #006B6C;
+    } 
+
     .linkTo {
-      color: white;
+      color: #006B6C;
       text-decoration: none;
     }
 
     .link {
-      color: $navbarTextColor;
-      opacity: 1;
       @include font(1.5rem, center);
     }
   }

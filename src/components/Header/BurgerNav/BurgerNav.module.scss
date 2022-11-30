@@ -16,7 +16,6 @@
 
   .menu {
     background: $navBgColor;
-    opacity: 0.9;
     width: 100%;
     cursor: pointer;
     .buttonToClose{
@@ -26,7 +25,7 @@
     .iconClose {
       width: 30px;
       height: 30px;
-      color: white;
+      color: #006B6C;
       text-align: right;
       padding: 5px;
 
@@ -36,7 +35,7 @@
     }
 
     .linkContainer {
-      color: white;
+      color: #006B6C;
       @include font(1.5rem, left);
       padding: 20px;
 
@@ -50,7 +49,7 @@
   .openButton {
     border: none;
     opacity: 0.8;
-    color: $linksColor;
+    color: $menuIconColor;
 
     &:hover {
       opacity: 1;
