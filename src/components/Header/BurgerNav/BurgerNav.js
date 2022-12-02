@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-
 import style from './BurgerNav.module.scss';
 import {navLinksItems} from "./../constants";
-
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-scroll";
+import {Link} from "react-router-dom";
 
 export const BurgerNav = () => {
 
@@ -27,15 +25,16 @@ export const BurgerNav = () => {
                 {navLinksItems.map(item=>
                     <div className={style.linkContainer} >
                         <Link
-                            activeClass={style.link}
+                            className={style.link}
                             to={item.link}
                             spy={true}
                             smooth={true}
                             offset={0}
                             duration={500}
                             onClick={openHandler}
+                            
                         >
-                            {item.icon} {item.title}
+                          {item.icon} {item.title}
                         </Link>
                     </div>)    
                 }   

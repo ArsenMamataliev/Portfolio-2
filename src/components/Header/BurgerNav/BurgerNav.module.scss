@@ -31,13 +31,17 @@
     }
 
     .linkContainer {
-      color: white;
       @include font(1.5rem, left);
-      padding: 20px;
-      transition: color 1s ease;
+      padding: 20px; 
+
+      .link{
+        text-decoration: none;
+        color: white;
+        transition: color 1s ease;
       
-      &:hover{
-        color: red;
+        &:hover{
+          color: red;
+        }
       }
     }
   }

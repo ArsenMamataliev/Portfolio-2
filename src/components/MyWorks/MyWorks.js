@@ -22,16 +22,16 @@ export const MyWorks = () => {
       ]
     
     return (
-        <div className={style.myWorks} id={'projects'}>
+        <div className={style.myWorks}>
             <div className={styleContainer.container}>
                 <div className={style.worksContainer}>
                     <div className={style.links}>
                         {networksData.map(data=>
-                         <MyWork title={data.title}
-                            imgLink={data.imgLink}
-                            text={data.text}
-                            link={data.link}
-                        />
+                            <MyWork title={data.title}
+                                imgLink={data.imgLink}
+                                text={data.text}
+                                link={data.link}
+                            />
                         )}
                     </div>
                 </div>

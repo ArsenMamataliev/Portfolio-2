@@ -2,6 +2,7 @@
 
 .myWorks {
   background-color: white;
+  
   .worksContainer {
     @include flex(center, flex-start, wrap);
     flex-direction: column;

@@ -7,9 +7,4 @@ export const navLinksItems = [
     {title: 'Projects', icon: <FontAwesomeIcon icon={faFolderOpen}/>, link: '/projects'},
     ];
 
-
-    export const projectPages = [
-        {title: 'Photo gallery', link: '/photos'},
-        {title: 'Projects', link: '/booking'},
-        ];
          
