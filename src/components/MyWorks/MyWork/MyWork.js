@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './MyWork.module.scss';
 import Fade from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
 
 export const MyWork = (props) => {
     return (
@@ -15,7 +16,7 @@ export const MyWork = (props) => {
                         )}
                     </div>
                     <div className={style.linkContainer}>
-                        <a href={props.link} className={style.link}>Visit</a>
+                        <Link to={props.link} className={style.link}>Visit</Link>
                     </div>     
                 </div>       
             </div> 

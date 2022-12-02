@@ -1,5 +1,4 @@
 import React from 'react';
-
 import style from './MyWorks.module.scss';
 import styleContainer from '../../Common/Styles/Container.module.scss';
 import {MyWork} from './MyWork/MyWork';
