@@ -4,6 +4,7 @@ import { createApi } from 'unsplash-js';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectValues, totalPagesFn, totalPhotosFn } from '../../../../features/photoGallery/photoSlice';
 import Photos from '../photocamp/Photos';
+import Loader from '../loader/Loader';
 
 const api = createApi({
   accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A',
@@ -29,7 +30,7 @@ const api = createApi({
     }, [select.query, select.orientation, select.limit, select.color, select.page, dispatch]);
   
     if (data === null) {
-      return <div>Loading...</div>;
+      return <Loader /> ;
     } else if (data.errors) {
       return (
         <div>

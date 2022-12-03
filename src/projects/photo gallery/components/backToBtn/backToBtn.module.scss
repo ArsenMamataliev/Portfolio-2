@@ -1,0 +1,20 @@
+.btnContainer{
+    align-items: center;
+    background-color: #1976D2;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    color: white;
+    padding: 5px 10px;
+   
+    &:hover{
+        padding-left: 0;
+    }
+
+    .link{
+        text-decoration: none;
+        color: white;
+
+       
+    }
+}

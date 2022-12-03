@@ -1,10 +1,10 @@
 .wrapper{
-  max-width: 100%;
+  width: 100%;
 }
 
 .photoContainer{
-  flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-flow: row wrap;
+  gap: 5px;
 }

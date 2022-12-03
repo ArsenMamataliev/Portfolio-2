@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { queryFn } from '../../../../features/photoGallery/photoSlice';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import style from "./search.module.scss"
 
 export default function Search() {
@@ -14,7 +15,8 @@ export default function Search() {
   
   return (
     <div className={style.searchBox}>
-        <input 
+        <SearchRoundedIcon />
+        <input
           type="text"
           placeholder='Please type a word'
           value={word}

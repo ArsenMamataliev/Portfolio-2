@@ -1,14 +1,14 @@
+.photos{
+  width: 300px;
 
-  
-  .photos{
-    display: flex;
-    flex-flow: column wrap;
-    width: 20%;
+  @media(max-width: 650px){
+    width: 100%;
   }
+}
   
-  img{
-    width: 95%;
-    height: 95%;
-    border-radius: 10px;
-  }
+img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
   
