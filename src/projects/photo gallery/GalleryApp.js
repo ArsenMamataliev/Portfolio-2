@@ -6,7 +6,7 @@ import style from './galleryApp.module.scss'
 import BackToBtn from './components/backToBtn/BackToBtn'
 import PageInfo from './components/pageInfo/PageInfo'
 import Filter from './components/select/Filter.js'
-
+import FilterBtns from './components/select/FilterBtns'
 
 export default function GalleryApp() {
   return (
@@ -18,6 +18,7 @@ export default function GalleryApp() {
           </div>
           <div className={style.bottom}>
             <Search />
+            <FilterBtns />
             <Filter />
           </div>
         </header>

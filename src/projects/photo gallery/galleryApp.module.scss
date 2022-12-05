@@ -7,7 +7,6 @@
     margin: 0; 
 
     .header{
-        height: 25%;
         padding-top: 10px;
         
         @media (max-width: 850px){
@@ -22,21 +21,22 @@
             display: flex;
             justify-content: space-between;
         }
+
         .bottom{
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             align-items: center;
+            gap: 15px;
         }
     }
 
     .main{
-        height: 75%;
         overflow-y: scroll;
     }
 
     .footer{
-        height: 10%;
+        height: 15%;
         display: flex;
         justify-content: center;
         align-items: center;

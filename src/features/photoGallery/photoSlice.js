@@ -11,7 +11,7 @@ const initialState = {
   totalPhotos: 0
 };
 
-export const counterSlice = createSlice({
+export const photoSlice = createSlice({
   name: 'photoGallery',
   initialState,
   reducers: {
@@ -42,8 +42,8 @@ export const counterSlice = createSlice({
   }
 });
 
-export const { queryFn, orientationFn, colorFn, limitFn, orderByFn, pageFn, totalPhotosFn, totalPagesFn } = counterSlice.actions;
+export const { queryFn, orientationFn, colorFn, limitFn, orderByFn, pageFn, totalPhotosFn, totalPagesFn } = photoSlice.actions;
 
 export const selectValues = (state) => state.photoGallery;
 
-export default counterSlice.reducer;
+export default photoSlice.reducer;

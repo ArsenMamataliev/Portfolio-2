@@ -15,7 +15,7 @@ export default function Search() {
   
   return (
     <div className={style.searchBox}>
-        <SearchRoundedIcon />
+        <SearchRoundedIcon color='primary' />
         <input
           type="text"
           placeholder='Please type a word'
