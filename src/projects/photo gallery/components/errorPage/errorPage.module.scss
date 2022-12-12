@@ -1,0 +1,26 @@
+.errorPageContainer{
+    align-items: center;
+    background-color: #DAFFF6;
+    color: #006B6C;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+   
+    .link{
+        background-color: #006B6C;
+        border-radius: 10px;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+        transition: all 1s ease;
+        
+        &:hover{
+            border: 2px solid #006B6C;
+            background-color: #DAFFF6;
+            color: #006B6C;
+        }
+    }
+}

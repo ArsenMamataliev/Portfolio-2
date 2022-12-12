@@ -1,9 +1,44 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './App';
 import './index.scss';
+import Root from './pages/main/Root';
+import ErrorPage from './projects/photo gallery/components/errorPage/ErrorPage';
+import Projects from './pages/projects/Projects';
+import GalleryApp from './projects/photo gallery/GalleryApp';
+import ProjectsList from './projects/photo gallery/components/projectList/ProjectsList';
+import BookingApp from './projects/booking/BookingApp';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "projects",
+    element: <Projects />,
+    children: [
+      {
+        path: "list",
+        element: <ProjectsList />
+      },
+      {
+        path: "gallery",
+        element: <GalleryApp />
+      },
+      {
+        path: "booking",
+        element: <BookingApp />
+      }
+      ],
+    },
+ 
+]);
+
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -11,7 +46,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectValues, totalPagesFn, totalPhotosFn } from '../../../../features/photoGallery/photoSlice';
 import Photos from '../photocamp/Photos';
 import Loader from '../loader/Loader';
+import Alerts from '../Alert';
+// import { pageToogleFn } from '../../../../features/photoGallery/paginationSlice';
 
 const api = createApi({
   accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A',
@@ -34,8 +36,7 @@ const api = createApi({
     } else if (data.errors) {
       return (
         <div>
-          <div>{data.errors[0]}</div>
-          <div>PS: Make sure to set your access token!</div>
+          <Alerts error={data.errors[0]} errorDescription = {'PS: Make sure to set your access token!'}/>
         </div>
       );
     } else {
@@ -43,7 +44,10 @@ const api = createApi({
         <div className={style.wrapper}>
           <ul className={style.photoContainer}>
             {data.response.results.map((photo) => (
-              <Photos photo={photo} key={photo.id} />
+              <Photos 
+                photo={photo}
+                key={photo.id} 
+              />
             ))}
           </ul>
         </div>

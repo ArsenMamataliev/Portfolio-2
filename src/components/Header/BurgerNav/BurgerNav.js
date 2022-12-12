@@ -23,16 +23,14 @@ export const BurgerNav = () => {
                     <FontAwesomeIcon icon={faTimesCircle} className={style.iconClose}/>
                 </div>
                 {navLinksItems.map(item=>
-                    <div className={style.linkContainer} >
+                    <div key={item.title} className={style.linkContainer} >
                         <Link
+                            key={item.title}
                             className={style.link}
                             to={item.link}
-                            spy={true}
-                            smooth={true}
                             offset={0}
                             duration={500}
-                            onClick={openHandler}
-                            
+                            onClick={openHandler} 
                         >
                           {item.icon} {item.title}
                         </Link>

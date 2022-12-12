@@ -11,13 +11,13 @@ export const MyWork = (props) => {
                     <h3 className={style.title}>{props.title}</h3>
                     <div className={style.stack}>
                         {props.text.map((stack)=>
-                            <Tilt>
+                            <Tilt key={stack}>
                                 <p className={style.text}>{stack}</p>
                             </Tilt>
                         )}
                     </div>
                     <div className={style.linkContainer}>
-                        <Link to={props.link} className={style.link}>visit</Link>
+                        <Link to={`/projects/${props.link}`} className={style.link}>visit</Link>
                     </div>     
                 </div>           
         </div>    

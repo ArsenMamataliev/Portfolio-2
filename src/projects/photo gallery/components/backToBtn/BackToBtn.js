@@ -8,7 +8,7 @@ export default function BackToBtn() {
     <div className={style.btnContainer}>
         <ArrowBackIcon />
         <Link 
-          to = "/"
+          to = "/projects/list"
           className={style.link}
         > 
           Back 

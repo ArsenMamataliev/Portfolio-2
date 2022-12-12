@@ -11,13 +11,13 @@ export const MyWorks = () => {
             title: 'Photo Gallery', 
             text: ['React', 'Redux', 'MaterialUI', 'SCSS', 'UnSplash API'],
             imgLink: photoGallery,
-            link: '/gallery'
+            link: 'gallery'
         }, 
         {
             title: 'Booking',
             text: ['React', 'Redux', 'MaterialUI', 'SCSS'],
             imgLink: booking,
-            link: '/booking'
+            link: 'booking'
         },
       ]
     
@@ -28,6 +28,7 @@ export const MyWorks = () => {
                     <div className={style.links}>
                         {networksData.map(data=>
                             <MyWork title={data.title}
+                                key={data.title}
                                 imgLink={data.imgLink}
                                 text={data.text}
                                 link={data.link}

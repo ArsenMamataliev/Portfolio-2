@@ -17,7 +17,13 @@
     padding: 0 10px;
     cursor: pointer;
 
-    .linkTo {
+    .active{
+      color:red;
+      text-decoration: none;
+      
+    }
+
+    .link{
       color: white;
       text-decoration: none;
       transition: color 1s ease;

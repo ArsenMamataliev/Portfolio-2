@@ -9,23 +9,27 @@ export default function PaginationControlled() {
 
   const dispatch = useDispatch();
   const item = useSelector(selectValues);
+  const data = useSelector(state => state.paginationSlice.data)
 
+  console.log(data);
 
   const handleChange = (event, value) => {
     dispatch(pageFn(value));
-    console.log(value);
   }
  
   return (
     <div className={style.paginationBox}>
-      <Stack spacing={1}>
-        <Pagination 
-          count={item.totalPages || 1} 
-          onChange={handleChange} 
-          size="small"
-          color="primary" 
-        />
-      </Stack>
-    </div>
+      {
+        data&&
+        <Stack spacing={1}>
+          <Pagination 
+            count={item.totalPages || 1} 
+            onChange={handleChange} 
+            size="small"
+            color="primary" 
+          />
+        </Stack>
+      }    
+  </div>  
   );
 }

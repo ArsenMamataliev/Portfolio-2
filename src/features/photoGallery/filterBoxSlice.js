@@ -14,6 +14,6 @@ export const filterSlice = createSlice({
  }
 });
 
-export const { toogleFn} = filterSlice.actions;
+export const { toogleFn } = filterSlice.actions;
 
 export default filterSlice.reducer;
