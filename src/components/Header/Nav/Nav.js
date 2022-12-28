@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './Nav.module.scss';
 import { navLinksItems } from "../constants"
-import { Fade } from "react-awesome-reveal"
 import { NavLink } from "react-router-dom"
+import logo from '../../../assets/logo/logo.png'
 
 export const Nav = () => {
     return (
         <div className={style.nav}>
-            <Fade top>
+            <img  src={logo} alt='logo' />
+            <div>
                 { navLinksItems.map(item => 
                     <div className={style.linkContainer}>
                         <NavLink 
@@ -21,7 +22,7 @@ export const Nav = () => {
                     </div>
                     )
                 }
-            </Fade>
+            </div>
         </div>
     )
 }

@@ -18,7 +18,7 @@ export default function Search() {
         <SearchRoundedIcon color='primary' />
         <input
           type="text"
-          placeholder='Please type a word'
+          placeholder='Searching...'
           value={word}
           onChange = {setWordFn}
           />

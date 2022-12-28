@@ -13,11 +13,10 @@ export default function GalleryApp() {
     <div className={style.gallery}>
         <header className={style.header}> 
           <div className={style.top}>
-            <BackToBtn />
+            <Search />
             <PageInfo />
           </div>
           <div className={style.bottom}>
-            <Search />
             <FilterBtns />
             <Filter />
           </div>

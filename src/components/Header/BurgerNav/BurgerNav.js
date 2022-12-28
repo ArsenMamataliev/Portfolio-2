@@ -3,7 +3,7 @@ import style from './BurgerNav.module.scss';
 import {navLinksItems} from "./../constants";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 export const BurgerNav = () => {
 
@@ -24,16 +24,18 @@ export const BurgerNav = () => {
                 </div>
                 {navLinksItems.map(item=>
                     <div key={item.title} className={style.linkContainer} >
-                        <Link
+                        <NavLink
+                            className={({ isActive }) =>
+                            isActive ? style.active : style.link
+                            }
                             key={item.title}
-                            className={style.link}
                             to={item.link}
                             offset={0}
                             duration={500}
                             onClick={openHandler} 
                         >
                           {item.icon} {item.title}
-                        </Link>
+                        </NavLink>
                     </div>)    
                 }   
             </div>

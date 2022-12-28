@@ -7,11 +7,10 @@ export default function BackToBtn() {
   return (
     <div className={style.btnContainer}>
         <ArrowBackIcon />
-        <Link 
-          to = "/projects/list"
-          className={style.link}
-        > 
-          Back 
+          <Link 
+            to = "/projects/list"
+            className={style.link}
+          > 
         </Link>
     </div>
   )

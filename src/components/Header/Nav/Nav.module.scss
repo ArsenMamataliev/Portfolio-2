@@ -3,14 +3,24 @@
 
 .nav {
   height: 70px;
-  @include flex(center, flex-end, wrap);
+  @include flex(center, space-between, wrap);
   background-color: $greenBgColor;
   width: 100%;
   text-decoration: none;
   padding: 0 40px;
   @include font(1.5rem, center);
+
   @media (max-width: 666px){
     display: none;
+  }
+
+  img{
+    width: 100px;
+    height: 60px;
+  }
+
+  div{
+    @include flex(center, flex-end, wrap);
   }
 
   .linkContainer {

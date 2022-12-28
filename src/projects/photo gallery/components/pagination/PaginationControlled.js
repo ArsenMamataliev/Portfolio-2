@@ -19,8 +19,6 @@ export default function PaginationControlled() {
  
   return (
     <div className={style.paginationBox}>
-      {
-        data&&
         <Stack spacing={1}>
           <Pagination 
             count={item.totalPages || 1} 
@@ -28,8 +26,7 @@ export default function PaginationControlled() {
             size="small"
             color="primary" 
           />
-        </Stack>
-      }    
+        </Stack> 
   </div>  
   );
 }

@@ -1,18 +1,17 @@
 @import './../../Common/Styles/SASS/mixins';
 
 .myWorks {
-  background-color: white;
+  background-color: #DAFFF6;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  .worksContainer {
-    @include flex(center, flex-start, wrap);
-    flex-direction: column;
+  .links {
+    @include flex(center, center, wrap);
+    flex-direction: row;
     width: 100%;
+  }  
 
-    .links {
-      @include flex(center, center, wrap);
-      flex-direction: row;
-      width: 100%;
-    }
-  }
 }
 
