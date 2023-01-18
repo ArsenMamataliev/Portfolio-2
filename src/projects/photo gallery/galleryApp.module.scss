@@ -8,37 +8,26 @@
 
     .header{
         padding-top: 10px;
-        
-        @media (max-width: 850px){
-            height: 45%; 
-        }
-
-        @media (max-width: 525px){
-            height: 65%; 
-        }
 
         .top{
             display: flex;
             justify-content: space-between;
+            flex-flow: row wrap;
+            align-items: center;
+
+            @media (min-width: 768px){
+                justify-content: center; 
+                gap: 10px;
+            }
         }
 
         .bottom{
             display: flex;
-            flex-flow: row wrap;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
         }
     }
 
     .main{
         overflow-y: scroll;
-    }
-
-    .footer{
-        height: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './MyWork.module.scss';
 import { Link } from 'react-router-dom';
-// import LabTabs from '../../tabs/LabTabs';
+import Tilt from 'react-parallax-tilt';
 
 export const MyWork = (props) => {
     return (
@@ -12,7 +12,13 @@ export const MyWork = (props) => {
             <div className={style.description}>
                 <h3 className={style.title}>{props.title}</h3>
                 <div className={style.stack}>
-                    {/* <LabTabs text = {props.stack}/> */}
+                  {
+                    props.stack.map(item =>
+                        <Tilt>
+                            <p className={style.text}>{item}</p>
+                        </Tilt>
+                    )
+                  }
                 </div>
                 <div className={style.linkContainer}>
                     <Link to={`/projects/${props.link}`} className={style.link}>Demo</Link>

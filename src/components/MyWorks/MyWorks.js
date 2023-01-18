@@ -29,7 +29,7 @@ export const MyWorks = () => {
                         <MyWork title={data.title}
                             key={data.title}
                             imgLink={data.imgLink}
-                            text={data.text}
+                            stack={data.stack}
                             link={data.link}
                         />
                     )}
