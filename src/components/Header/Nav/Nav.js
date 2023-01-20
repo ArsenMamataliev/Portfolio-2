@@ -11,7 +11,8 @@ export const Nav = () => {
             <div>
                 { navLinksItems.map(item => 
                     <div className={style.linkContainer}>
-                        <NavLink 
+                        <NavLink
+                            key={item.title}
                             to={item.link}
                             className={({ isActive }) =>
                                 isActive ? style.active : style.link

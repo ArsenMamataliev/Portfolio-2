@@ -11,7 +11,7 @@ export default function Share({photo}){
           url: `${photo.urls.regular}`,
           title: "Photo gallery",
         }}
-        onClick={() => console.log("shared successfully!")}
+        onClick={() => console.log("Shared successfully!")}
       >
         <ShareIcon />
       </RWebShare>

@@ -1,20 +1,19 @@
 .btnContainer{
+    height: 35px;
+    width: 35px;
     align-items: center;
     background-color: #1976D2;
+    border-radius: 100%;
     display: flex;
     justify-content: center;
-    width: 100px;
-    color: white;
-    padding: 5px 10px;
+    cursor: pointer;
    
     &:hover{
-        padding-left: 0;
+        background-color: #0352a1;
     }
 
     .link{
         text-decoration: none;
-        color: white;
-
-       
+        color: white;       
     }
 }

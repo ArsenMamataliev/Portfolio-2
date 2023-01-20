@@ -5,12 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectValues, totalPagesFn, totalPhotosFn } from '../../../../features/photoGallery/photoSlice';
 import Photos from '../photocamp/Photos';
 import Loader from '../loader/Loader';
-import Alerts from '../Alert';
-// import { pageToogleFn } from '../../../../features/photoGallery/paginationSlice';
+import Alerts from '../alerts/Alert';
 
-const api = createApi({
-  accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A',
-});
+const unsplash = createApi({accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A'});
 
   const Gallery = () => {
     const [data, setPhotosResponse] = useState(null);
@@ -18,7 +15,7 @@ const api = createApi({
     const dispatch = useDispatch();
     
     useEffect(() => {
-      api.search
+      unsplash.search
         .getPhotos({query: `${select.query}`, orientation: `${select.orientation}`, perPage: `${select.limit}`, color: `${select.color}`, page: `${select.page}`})
         .then((result) => {
           setPhotosResponse(result);
@@ -42,14 +39,18 @@ const api = createApi({
     } else {
       return (
         <div className={style.wrapper}>
-          <ul className={style.photoContainer}>
-            {data.response.results.map((photo) => (
+          {
+            data.response.total === 0 ?
+            <Alerts error='No mathing photos' errorDescription='Please refresh page or type another text'/>  :
+            <ul className={style.photoContainer}>
+              {data.response.results.map((photo) => (
               <Photos 
                 photo={photo}
                 key={photo.id} 
               />
-            ))}
-          </ul>
+              ))}
+            </ul>
+          }
         </div>
       );
     }

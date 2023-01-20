@@ -14,7 +14,7 @@ export const MyWork = (props) => {
                 <div className={style.stack}>
                   {
                     props.stack.map(item =>
-                        <Tilt>
+                        <Tilt key={item.stack}>
                             <p className={style.text}>{item}</p>
                         </Tilt>
                     )

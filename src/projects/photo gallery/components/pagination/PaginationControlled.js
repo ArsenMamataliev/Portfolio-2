@@ -8,25 +8,25 @@ import style from './pagination.module.scss'
 export default function PaginationControlled() {
 
   const dispatch = useDispatch();
-  const item = useSelector(selectValues);
-  const data = useSelector(state => state.paginationSlice.data)
+  const page = useSelector(selectValues);
 
-  console.log(data);
-
-  const handleChange = (event, value) => {
+  const handleChange = (value) => {
     dispatch(pageFn(value));
   }
  
   return (
     <div className={style.paginationBox}>
-        <Stack spacing={1}>
-          <Pagination 
-            count={item.totalPages || 1} 
-            onChange={handleChange} 
-            size="small"
-            color="primary" 
-          />
-        </Stack> 
-  </div>  
+        {
+          page.totalPages > 0 && 
+          <Stack spacing={1}>
+            <Pagination 
+              count={page.totalPages} 
+              onChange={handleChange} 
+              size="small"
+              color="primary" 
+            />
+          </Stack>
+        }        
+    </div>  
   );
 }
