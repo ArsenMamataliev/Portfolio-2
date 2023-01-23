@@ -1,0 +1,114 @@
+@import './../../Common/Styles/SASS/variables.scss';
+@import './../../Common/Styles/SASS/mixins.scss';
+
+.container {
+  margin: 0;
+  padding: 40px 0;
+  min-height: calc(100vh - 70px);
+  flex-direction: column;
+  background: $greenPoorBgColor;
+  color: $greenTextColor;
+  @include flex(center, flex-start, wrap);
+  @include font(1.5rem, center);
+
+  .wrapper {
+    flex-direction: row;
+    @include flex(center, center, wrap);
+    margin-bottom: 40px;
+
+    .containerPhoto {
+      .myPhoto {
+        max-width: 300px;
+        border-radius: 50%;
+        box-shadow: #006B6C 0px 50px 100px -20px, #006B6C 0px 30px 60px -30px;
+       
+        &:hover{
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+
+    .containerContact {
+      flex-direction: column;
+      @include flex(flex-start, flex-start, wrap);
+      margin-left: 30px;
+
+      .text {
+        padding: 20px;
+        color: $greenTextColor;
+        text-decoration: none;
+
+        &:hover {
+          color: $hoveredGreenText;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+
+  .containerLink {
+    @include flex(center, center, wrap);
+    gap: 30px;
+    margin-bottom: 30px;
+    
+    .linkIcon {
+      border-radius: 50%;
+      padding: 10px 10px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+        box-shadow: #006B6C 0px 19px 38px, #006B6C 0px 15px 12px;
+      }
+    }
+  }
+  
+  .aboutText {
+    max-width: 900px;
+    margin: 10px 10px 0px;
+    @include flex(center,center,wrap);
+
+    &:hover {
+      color: $hoveredGreenText;
+      font-weight: bolder;
+    }
+  }
+
+  .contactIcon{
+    margin-right: 15px;
+  }
+
+  @media (max-width: 767px){
+    .wrapper{
+      .containerPhoto {
+        .myPhoto {
+          max-width: 250px;
+          margin-bottom: 50px;
+        }
+      }
+      .containerContact {
+        .text{
+          padding: 5px;
+          @include font(1.3rem, center);
+        }
+      }
+    }
+      .containerLink{
+        margin: 20px 0;
+
+        .linkIcon{
+          box-shadow: rgba(0, 0, 0, 0.50) 0px 25px 50px -12px;  
+          
+          &:hover {
+            box-shadow: #006B6C 0px 25px 50px -12px;
+          }
+        }
+      }
+    
+    .aboutText{
+      padding: 0 10px;
+      @include font(1.1rem, center);
+    } 
+  }
+}
+

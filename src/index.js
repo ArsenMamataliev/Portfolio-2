@@ -4,18 +4,18 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import './index.scss';
-import Root from './pages/main/Root';
 import ErrorPage from './projects/photo gallery/components/errorPage/ErrorPage';
 import Projects from './pages/projects/Projects';
 import GalleryApp from './projects/photo gallery/GalleryApp';
 import ProjectsList from './projects/photo gallery/components/projectList/ProjectsList';
 import BookingApp from './projects/booking/BookingApp';
+import Main from './pages/main/Main';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Main />,
     errorElement: <ErrorPage />,
   },
   {

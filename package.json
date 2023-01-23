@@ -27,6 +27,7 @@
     "react-url-image-downloader": "^1.0.2",
     "react-web-share": "^2.0.2",
     "saas": "^1.0.0",
+    "typewriter-effect": "^2.19.0",
     "unsplash-js": "^7.0.15",
     "web-vitals": "^2.1.4"
   },
