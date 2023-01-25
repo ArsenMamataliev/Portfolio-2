@@ -7,6 +7,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import {linksDataItems} from './../../Constants/constants';
 import Fade from 'react-awesome-reveal';
+import TerminalIcon from '@mui/icons-material/Terminal';
+import { Link } from 'react-router-dom';
 
 export const AboutMe = () => {
  const contactsDataItems = [
@@ -35,25 +37,32 @@ export const AboutMe = () => {
                     </div>
                 </Fade>
             </div>    
+                <Fade left>
+                    <div className={style.containerLink}>
+                        {linksDataItems.map(item=> 
+                            <a href={item.link}>
+                                <img src={item.icon} alt={'icon'} width={40}className={style.linkIcon}/>
+                            </a>
+                        )}
+                    </div>
+                </Fade>
                 <Fade bottom>
-                <div className={style.containerLink}>
-                    {linksDataItems.map(item=> 
-                        <a href={item.link}>
-                            <img src={item.icon} alt={'icon'} width={40}className={style.linkIcon}/>
-                        </a>
-                    )}
-                </div>
-                <div className={style.aboutText}>
-                    <p>
-                        I have experience with creating SPA using <srtong>React, Redux, TypeScript, HTML, Material UI,
-                        CSS, SCSS.</srtong>
-                        I am currently focused on improving my skills by using new technologies and tools.
-                        My hobbies are solving puzzles on Codewars, reading books about coding, and watching
-                        educational videos. I keep polishing up my English by using apps, reading articles and
-                        watching TV shows and series. I really enjoy learning something new.
-                    </p>
-                </div>
-            </Fade>
+                    <div className={style.aboutText}>
+                        <p>
+                            I have experience with creating SPA using <srtong>React, Redux, TypeScript, HTML, Material UI,
+                            CSS, SCSS.</srtong> 
+                            I am currently focused on improving my skills by using new technologies and tools.
+                            My hobbies are solving puzzles on Codewars, reading books about coding, and watching
+                            educational videos. I keep polishing up my English by using apps, reading articles and
+                            watching TV shows and series. I really enjoy learning something new.
+                        </p>
+                    </div>
+                </Fade>
+                <Link to='/projects/list' className={style.link}>
+                    <button className={style.projectBtn}> 
+                        <TerminalIcon /> PROJECT PAGE
+                    </button>        
+                </Link>
         </div>
     )
 }

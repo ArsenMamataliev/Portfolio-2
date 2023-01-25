@@ -3,7 +3,8 @@ import style from './BurgerNav.module.scss';
 import {navLinksItems} from "./../constants";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars, faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
+import logo from '../../../assets/logo/logo5.png'
 
 export const BurgerNav = () => {
 
@@ -15,6 +16,9 @@ export const BurgerNav = () => {
 
     return (
         <div className={style.container}>
+            <Link to="/" className={style.logo}>
+             <img  src={logo} alt='logo' />
+            </Link>
             <div onClick={openHandler} className={open === false ? style.openButton : style.closeButton}>
                 <FontAwesomeIcon icon={faBars} className={style.icon}/>
             </div>

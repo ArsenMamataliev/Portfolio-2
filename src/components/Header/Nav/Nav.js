@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Nav.module.scss';
 import { navLinksItems } from "../constants"
 import { NavLink } from "react-router-dom"
-import logo from '../../../assets/logo/logo.png'
+import logo from '../../../assets/logo/logo5.png'
 
 export const Nav = () => {
     return (

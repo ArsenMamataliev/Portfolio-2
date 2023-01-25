@@ -1,0 +1,16 @@
+@import './../../Common/Styles/SASS/mixins';
+
+.skillsContainer {
+  @include flex(center, flex-start, wrap);
+  flex-direction: column;
+
+  .skills {
+    margin-top: 40px;
+    width: 100%;
+    @include flex(center, space-between, wrap);
+    @media (max-width: 416px) {
+      justify-content: center;
+    }
+  }
+}
+

@@ -7,9 +7,14 @@
   width: 100%;
   z-index: 3;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   @media (min-width: 667px) {
     display: none;
+  }
+
+  .logo{
+    width: 75px;
+    height: 42px;
   }
 
   .closeButton {
