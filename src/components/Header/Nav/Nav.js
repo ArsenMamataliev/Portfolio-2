@@ -1,13 +1,15 @@
 import React from 'react';
 import style from './Nav.module.scss';
 import { navLinksItems } from "../constants"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import logo from '../../../assets/logo/logo5.png'
 
 export const Nav = () => {
     return (
         <div className={style.nav}>
-            <img  src={logo} alt='logo' />
+            <Link to='/' className={style.logo}> 
+                <img  src={logo} alt='logo' />
+            </Link>
             <div>
                 { navLinksItems.map(item => 
                     <div className={style.linkContainer}>

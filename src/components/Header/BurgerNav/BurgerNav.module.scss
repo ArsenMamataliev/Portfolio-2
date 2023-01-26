@@ -5,43 +5,48 @@
   background: $greenBgColor;
   padding: 10px 5px;
   width: 100%;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  
   @media (min-width: 667px) {
     display: none;
   }
 
-  .logo{
-    width: 75px;
-    height: 42px;
+  .menubar{
+    display: flex;
+    justify-content: space-between;
   }
 
-  .closeButton {
-    display: none;
-  }
-
-  .menu {
-    background: $greenBgColor;
-    width: 100%;
-    cursor: pointer;
-
-    .buttonToClose{
-      text-align: right;
-    }
-
-    .iconClose {
+  .menuIcon{
+    .icon{
       width: 30px;
       height: 30px;
       color: white;
       text-align: right;
       padding: 5px;
     }
+  }
+
+  .logo{
+    width: 65px;
+    height: 42px;
+  }
+
+  .hideMenu {
+    display: none;
+  }
+
+  .menu {
+    cursor: pointer;
+    flex-direction: row;
+    @include flex(center, flex-end, nowrap);
 
     .linkContainer {
-      @include font(1.5rem, left);
-      padding: 20px; 
-      
+      padding: 0;
+      @include font(1rem, left);
+      display: flex;
+      flex-direction: row;
+
+
       @media (max-width: 667px) {
         padding: 5px 10px;
       }
@@ -49,31 +54,27 @@
       .link{
         text-decoration: none;
         color: white;
-        transition: color 1s ease;
+        transition: all 1s ease;
+        text-transform: uppercase;
+        padding: 10px; 
       
         &:hover{
-          color: red;
+          transform: scale(1.1, 1.1);
         }
       }
 
       .active{
-        color:red;
-        text-decoration: none; 
+        text-decoration: none;
+        color: white;
+        transition: color 1s ease;
+        text-transform: uppercase;
+        padding: 5px; 
+        border-bottom: 2px solid #fff;
+
+        &:hover{
+          transform: scale(1.1, 1.1);
+        }
       }
-    }
-  }
-
-  .openButton {
-    border: none;
-    color: #fff;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-    .icon {
-      width: 40px;
-      height: 40px;
     }
   }
 }
