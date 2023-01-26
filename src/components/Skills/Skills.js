@@ -33,6 +33,8 @@ export default function Skills(){
     return (
         <div>
             <div className={`${styleContainer.container} ${style.skillsContainer}`}>
+                <p> What i use</p>
+                <p>These tools which I worked in last time, and I'm working with each of them that moment.</p>
                 <Fade bottom>
                     <div className={style.skills}>
                         {skillItems.map(item=><Tilt className="Tilt" options={{max: 25}}><Skill title={item.title} img={item.icon}/></Tilt>)}

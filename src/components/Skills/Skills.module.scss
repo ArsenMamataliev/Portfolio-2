@@ -3,11 +3,26 @@
 .skillsContainer {
   @include flex(center, flex-start, wrap);
   flex-direction: column;
+  p{
+    color: $greenTextColor;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  p:first-child{
+    border-bottom: 2px solid $greenTextColor; 
+    @include font(1.6rem, center);
+  }
+
+  p:nth-child(2){
+    @include font(1rem, center);
+  }
 
   .skills {
     margin-top: 40px;
     width: 100%;
     @include flex(center, space-between, wrap);
+   
     @media (max-width: 416px) {
       justify-content: center;
     }
