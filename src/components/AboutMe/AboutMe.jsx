@@ -28,9 +28,12 @@ export const AboutMe = () => {
                 </Fade>
                 <Fade right>
                     <div className={style.containerContact}>
-                        {contactsDataItems.map(item=>
-                            <p className={style.text}>
-                                < item.icon className={style.contactIcon}/> 
+                        {contactsDataItems.map((item, index) =>
+                            <p 
+                                className={style.text}
+                                key={index}
+                            >
+                                <item.icon className={style.contactIcon}/> 
                                 {item.data}
                             </p>
                         )}
@@ -39,8 +42,11 @@ export const AboutMe = () => {
             </div>    
                 <Fade left>
                     <div className={style.containerLink}>
-                        {linksDataItems.map(item=> 
-                            <a href={item.link}>
+                        {linksDataItems.map((item, index) => 
+                            <a 
+                                href={item.link}
+                                key={index}
+                            >
                                 <img src={item.icon} alt={'icon'} width={40}className={style.linkIcon}/>
                             </a>
                         )}
@@ -48,10 +54,9 @@ export const AboutMe = () => {
                 </Fade>
                 <Fade bottom>
                     <div className={style.aboutText}>
-                        <p>
-                            I have experience with creating SPA using <srtong>React, Redux, TypeScript, HTML, Material UI,
-                            CSS, SCSS.</srtong> 
-                            I am currently focused on improving my skills by using new technologies and tools.
+                        <p>I have experience with creating SPA using React, Redux, TypeScript, HTML, Material UI,
+                            CSS, SCSS.
+                            I'm currently focused on improving my skills by using new technologies and tools.
                             My hobbies are solving puzzles on Codewars, reading books about coding, and watching
                             educational videos. I keep polishing up my English by using apps, reading articles and
                             watching TV shows and series. I really enjoy learning something new.

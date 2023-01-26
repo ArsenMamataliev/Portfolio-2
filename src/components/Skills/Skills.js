@@ -37,8 +37,17 @@ export default function Skills(){
                 <p>These tools which I worked in last time, and I'm working with each of them that moment.</p>
                 <Fade bottom>
                     <div className={style.skills}>
-                        {skillItems.map(item=><Tilt className="Tilt" options={{max: 25}}><Skill title={item.title} img={item.icon}/></Tilt>)}
-                        
+                        {skillItems.map((item, index) =>
+                        <Tilt
+                            key={index}
+                            className="Tilt" 
+                            options={{max: 25}}
+                        >
+                            <Skill 
+                                title={item.title}
+                                img={item.icon}
+                            />
+                        </Tilt>)}
                     </div>
                 </Fade>
             </div>

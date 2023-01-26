@@ -13,8 +13,8 @@ export const MyWork = (props) => {
                 <h3 className={style.title}>{props.title}</h3>
                 <div className={style.stack}>
                   {
-                    props.stack.map(item =>
-                        <Tilt key={item.stack}>
+                    props.stack.map((item, index) =>
+                        <Tilt key={index}>
                             <p className={style.text}>{item}</p>
                         </Tilt>
                     )

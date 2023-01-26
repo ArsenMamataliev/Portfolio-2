@@ -91,10 +91,9 @@
       text-decoration: none;
       padding: 10px 20px;
       margin-top: 30px;
-      transition: 1s ease;
-
+      
       &:hover::after{
-        content: " >>>>";;
+        content: " >>>";;
       }
     }
   }

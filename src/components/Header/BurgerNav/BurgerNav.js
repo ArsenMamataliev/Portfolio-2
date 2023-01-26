@@ -29,12 +29,14 @@ export const BurgerNav = () => {
             </div>
             <div className={open === true ? style.menu : style.hideMenu}>
                 {navLinksItems.map(item=>
-                    <div key={item.title} className={style.linkContainer} >
+                    <div 
+                        key={item.title}
+                        className={style.linkContainer} 
+                    >
                         <NavLink
                             className={({ isActive }) =>
                             isActive ? style.active : style.link
                             }
-                            key={item.title}
                             to={item.link}
                             offset={0}
                             duration={500}

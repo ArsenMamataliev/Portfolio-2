@@ -11,10 +11,12 @@ export const Nav = () => {
                 <img  src={logo} alt='logo' />
             </Link>
             <div>
-                { navLinksItems.map(item => 
-                    <div className={style.linkContainer}>
+                { navLinksItems.map((item, index) => 
+                    <div 
+                        key={index}
+                        className={style.linkContainer}
+                    >
                         <NavLink
-                            key={item.title}
                             to={item.link}
                             className={({ isActive }) =>
                                 isActive ? style.active : style.link
