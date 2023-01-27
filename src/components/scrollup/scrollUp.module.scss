@@ -1,0 +1,13 @@
+.upIcon{
+    color: #006B6C;
+    font-size: 50px;
+    transition: all 1s ease;
+    
+    &:hover{
+        transform: scale(1.1, 1.1);
+    }
+
+    @media (max-width: 767px){
+        font-size: 35px; 
+    }
+}

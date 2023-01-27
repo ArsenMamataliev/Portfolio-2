@@ -2,6 +2,7 @@ import React from 'react'
 import { AboutMe } from '../../components/AboutMe/AboutMe'
 import { BurgerNav } from '../../components/Header/BurgerNav/BurgerNav'
 import { Nav } from '../../components/Header/Nav/Nav'
+import ScrollUp from '../../components/scrollup/ScrollUp'
 import Skills from '../../components/Skills/Skills'
 
 export default function Main() {
@@ -11,6 +12,7 @@ export default function Main() {
         <BurgerNav />
         <AboutMe />
         <Skills />
+        <ScrollUp />
     </div>
   )
 }
