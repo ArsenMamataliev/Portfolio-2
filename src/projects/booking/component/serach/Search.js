@@ -1,29 +1,13 @@
 import React from 'react'
+import Select from 'react-select'
 
-export default function Search() {
+export default function Search({options, placeholder}) {
   return (
     <div>
-        <input 
-            type='text'
-            placeholder='From'
+       <Select 
+         options={options}
+         placeholder={placeholder}
         />
-        <input 
-            type='text'
-            placeholder='To'
-        />
-        <input 
-            type='date'
-            placeholder='when'
-        />
-        <input 
-            type='date'
-            placeholder='back'
-        />
-        <input 
-            type='date'
-            placeholder='when'
-        />
-    
     </div>
   )
 }

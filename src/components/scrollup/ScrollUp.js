@@ -7,7 +7,10 @@ export default function ScrollUp() {
   return (
     <div>
         <ScrollToTop showUnder={160}>
-            <ArrowCircleUpIcon  className={style.upIcon}/>
+            <ArrowCircleUpIcon  
+              className={style.upIcon}
+              fontSize='large'  
+            />
         </ScrollToTop>
     </div>
   )

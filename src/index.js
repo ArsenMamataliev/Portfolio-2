@@ -10,6 +10,8 @@ import GalleryApp from './projects/photo gallery/GalleryApp';
 import ProjectsList from './projects/photo gallery/components/projectList/ProjectsList';
 import BookingApp from './projects/booking/BookingApp';
 import Main from './pages/main/Main';
+import CurrencyExchangeApp from './projects/currency exchange/CurrencyExchangeApp';
+import MovieInfoApp from './projects/movie info/MovieInfoApp';
 
 
 const router = createBrowserRouter([
@@ -27,12 +29,20 @@ const router = createBrowserRouter([
         element: <ProjectsList />
       },
       {
-        path: "gallery",
+        path: "photo_gallery",
         element: <GalleryApp />
       },
       {
         path: "booking",
         element: <BookingApp />
+      },
+      {
+        path: "movie_info",
+        element: <MovieInfoApp/>
+      },
+      {
+        path: "currency_exchange",
+        element: <CurrencyExchangeApp/>
       }
       ],
     },

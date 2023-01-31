@@ -1,6 +1,5 @@
 .upIcon{
     color: #006B6C;
-    font-size: 50px;
     transition: all 1s ease;
     
     &:hover{
@@ -8,6 +7,8 @@
     }
 
     @media (max-width: 767px){
-        font-size: 35px; 
+        position: absolute;
+        bottom: 0px;
+        right: -15px;
     }
 }

@@ -4,6 +4,8 @@ import styleContainer from '../../Common/Styles/Container.module.scss';
 import {MyWork} from './MyWork/MyWork';
 import photoGallery from './../../assets/img/photo_gallery.jpg';
 import booking from './../../assets/img/booking.jpg';
+import movieInfo from './../../assets/img/movie info.png';
+import currencyExchange from './../../assets/img/currency.png';
 
 export const MyWorks = () => {
     const networksData=[
@@ -11,13 +13,25 @@ export const MyWorks = () => {
             title: 'Photo Gallery', 
             stack: ['React', 'Redux', 'MaterialUI', 'SCSS', 'UnSplash API'],
             imgLink: photoGallery,
-            link: 'gallery'
+            link: 'photo_gallery'
         }, 
         {
             title: 'Booking',
             stack: ['React', 'Redux', 'MaterialUI', 'SCSS'],
             imgLink: booking,
             link: 'booking'
+        },
+        { 
+            title: 'Movie info', 
+            stack: ['React', 'Redux', 'MaterialUI', 'SCSS', 'Axios'],
+            imgLink: movieInfo,
+            link: 'movie_info'
+        }, 
+        {
+            title: 'Currency Exchange',
+            stack: ['React', 'Redux', 'MaterialUI', 'SCSS', 'Axios'],
+            imgLink: currencyExchange,
+            link: 'currency_exchange'
         },
       ]
     
