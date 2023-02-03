@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GradeIcon from '@mui/icons-material/Grade';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CodeIcon from '@mui/icons-material/Code';
+import noPhoto from '../../../../assets/img/no photo.jpg'
 import style from './movieDetail.module.scss'
 import { useSelector } from 'react-redux';
 import { selectValues } from '../../../../features/movie info/movieInfo';
+import { Link } from 'react-router-dom';
 
 export default function MovieDetail() {
   const [detail, setDetail] = useState([]);
@@ -19,10 +22,11 @@ export default function MovieDetail() {
   }, [movie.api_key, movie.id, movie.plot])
   return (
     <div className={style.wrapper}>
+      <Link className={style.link} to='/projects/movie/movie_list'> Back to movie list</Link>
       <div className={style.movieName}>{detail['Title']}</div>
       <div className={style.container}>
         <div className={style.photo}>
-          <img src={detail['Poster']} alt="movie_photo" />
+          <img src={detail['Poster'] !== 'N/A'? detail['Poster'] : noPhoto } alt="movie_photo" />
         </div>
           <div className={style.info}>
             <p><span>Year:</span> {detail['Year']}</p>
@@ -37,14 +41,15 @@ export default function MovieDetail() {
             
             <div className={style.rateInfo}>
             <p><CodeIcon />{detail['imdbID']}</p>
-            <p><GradeIcon />{detail['imdbRating']}</p>
+            <p><GradeIcon color='warning' />{detail['imdbRating']}</p>
             <p><ThumbUpOffAltIcon/>{detail['imdbVotes']}</p>
-            
-            {/* {
-                detail['Ratings'].map((rate, index)=> {
-                return <p key={index}>{rate.Source} {rate.Value}</p>
+            </div>
+            <div className={style.rateInfo}>
+            {
+                detail['Ratings'] && detail['Ratings'].map((rate, index)=> {
+                return<p key={index}><EmojiEventsIcon color='warning'/>{rate.Source} {rate.Value}</p>
                 })
-            } */}
+            }
             </div>
         </div>
       </div>

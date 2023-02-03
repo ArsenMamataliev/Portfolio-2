@@ -7,7 +7,7 @@ import './index.scss';
 import ErrorPage from './projects/photo gallery/components/errorPage/ErrorPage';
 import Projects from './pages/projects/Projects';
 import GalleryApp from './projects/photo gallery/GalleryApp';
-import ProjectsList from './projects/photo gallery/components/projectList/ProjectsList';
+import ProjectsList from './components/projectList/ProjectsList';
 import BookingApp from './projects/booking/BookingApp';
 import Main from './pages/main/Main';
 import CurrencyExchangeApp from './projects/currency exchange/CurrencyExchangeApp';

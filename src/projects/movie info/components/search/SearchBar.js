@@ -1,22 +1,31 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { movieNameFn, selectValues } from '../../../../features/movie info/movieInfo';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import Badge from '@mui/material/Badge';
 import style from './searchBar.module.scss'
 
 export default function SearchBar() {
   const dispatch = useDispatch();
   const movie = useSelector(selectValues);
 
-  const movieName= (e) => dispatch(movieNameFn(e.target.value));
+  const movieName= (e) => {
+    dispatch(movieNameFn(e.target.value));
+  };
   return (
     <div className={style.searchContainer}>
-        <p>OMDB</p>
-        <input 
-          type='text'
-          placeholder='Movie name'
-          value={movie.name}
-          onChange={movieName}
-        />
+        <p>Movie DB</p>
+        <div>
+          <input 
+            type='text'
+            placeholder='Movie name'
+            value={movie.name}
+            onChange={movieName}
+          />
+          <Badge badgeContent={4}>
+            <FavoriteIcon />
+          </Badge>
+        </div> 
     </div>
   )
 }

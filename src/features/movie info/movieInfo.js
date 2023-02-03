@@ -1,7 +1,7 @@
 import {createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  id: 'tt0099785',
+  id: '',
   api_key: '7a917a90',
   movies: [],
   name: 'alone',

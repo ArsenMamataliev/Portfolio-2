@@ -4,6 +4,7 @@ import style from './movieInfoApp.module.scss';
 import { useDispatch,  useSelector } from 'react-redux';
 import { moviesFn, selectValues, totalMoviesFn } from '../../features/movie info/movieInfo';
 import { Outlet } from 'react-router-dom';
+import ScrollUp from '../../components/scrollup/ScrollUp';
 
 
 export default function MovieInfoApp() {
@@ -11,7 +12,7 @@ export default function MovieInfoApp() {
   const movie = useSelector(selectValues);
   
     useEffect(()=>{
-      axios.get(`http://www.omdbapi.com/?s=${movie.name}&page=${movie.page}&plot=${movie.plot}&apikey=${movie.api_key}`)
+      axios.get(`http://www.omdbapi.com/?i=${movie.id}&s=${movie.name}&page=${movie.page}&plot=${movie.plot}&apikey=${movie.api_key}`)
         .then((response)=> {
           dispatch(moviesFn(response.data['Search']));
           dispatch(totalMoviesFn(response.data.totalResults));
@@ -23,6 +24,7 @@ export default function MovieInfoApp() {
     <div className={style.wrapper}>
       <div className={style.container}>
       <Outlet />
+      <ScrollUp loaderColor={'#010E21'} />
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ export default function Main() {
         <BurgerNav />
         <AboutMe />
         <Skills />
-        <ScrollUp />
+        <ScrollUp loaderColor={'#006B6C'}/>
     </div>
   )
 }

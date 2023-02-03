@@ -27,6 +27,7 @@
     "react-scroll": "^1.8.8",
     "react-scroll-up": "^1.4.0",
     "react-select": "^5.7.0",
+    "react-slide-fade-in": "^1.0.9",
     "react-url-image-downloader": "^1.0.2",
     "react-web-share": "^2.0.2",
     "saas": "^1.0.0",

@@ -4,6 +4,7 @@ import noPhoto from './../../../../assets/img/no photo.jpg'
 import { useDispatch } from 'react-redux';
 import { idFn } from '../../../../features/movie info/movieInfo';
 import { useNavigate } from "react-router-dom";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Movie({movie}) {
   const dispatch = useDispatch();
@@ -16,15 +17,18 @@ export default function Movie({movie}) {
   }
   
   return (
-    <div 
-      className={style.movieContainer}
-      onClick={changeIdFn}
-    > 
-      <img src={movie['Poster'] !== 'N/A'? movie['Poster'] : noPhoto } alt="movie_photo" />  
+    <div className={style.movieContainer}> 
+      <img src={movie['Poster'] !== 'N/A'? movie['Poster'] : noPhoto } 
+        alt="movie_photo" 
+        onClick={changeIdFn}
+      />  
       <div className={style.description}>
         <p>{movie['Title']}</p>
-        <p>{movie['Year']}</p>
-      </div> 
+        <p>{movie['Year']}</p> 
+      </div>
+      <div className={style.favorite}>
+          <FavoriteIcon color='error'/>
+      </div>
     </div>
   )
 }

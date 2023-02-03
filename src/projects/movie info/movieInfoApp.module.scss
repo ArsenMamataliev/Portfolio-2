@@ -9,5 +9,9 @@
         min-height: 100vh;
         margin: 0 auto;
         background: white;
+
+        @media(max-width: 912px){
+            width: 100%;
+        }
     }
 }       
