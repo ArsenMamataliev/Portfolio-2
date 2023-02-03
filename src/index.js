@@ -12,6 +12,8 @@ import BookingApp from './projects/booking/BookingApp';
 import Main from './pages/main/Main';
 import CurrencyExchangeApp from './projects/currency exchange/CurrencyExchangeApp';
 import MovieInfoApp from './projects/movie info/MovieInfoApp';
+import MovieDetail from './projects/movie info/components/movie detail/MovieDetail';
+import MovieList from './projects/movie info/components/movie list/MovieList';
 
 
 const router = createBrowserRouter([
@@ -37,8 +39,18 @@ const router = createBrowserRouter([
         element: <BookingApp />
       },
       {
-        path: "movie_info",
-        element: <MovieInfoApp/>
+        path: "movie",
+        element: <MovieInfoApp/>,
+        children: [
+          {
+            path: "movie_list",
+            element: <MovieList />
+          },
+          {
+            path: "movie_detail",
+            element: <MovieDetail/>
+          }
+        ]
       },
       {
         path: "currency_exchange",

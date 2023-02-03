@@ -25,7 +25,7 @@ export const MyWorks = () => {
             title: 'Movie info', 
             stack: ['React', 'Redux', 'MaterialUI', 'SCSS', 'Axios'],
             imgLink: movieInfo,
-            link: 'movie_info'
+            link: 'movie/movie_list'
         }, 
         {
             title: 'Currency Exchange',

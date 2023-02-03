@@ -3,6 +3,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useDispatch, useSelector} from 'react-redux';
 import style from './pagination.module.scss'
+import { pageFn, selectValues } from '../../../../features/movie info/movieInfo';
 
 export default function PaginationControlled() {
 
@@ -16,13 +17,13 @@ export default function PaginationControlled() {
   return (
     <div className={style.paginationBox}>
         {
-          page.totalPages > 0 && 
+          page.totalMovies > 10 && 
           <Stack spacing={1}>
             <Pagination 
-              count={page.totalPages} 
+              count={Math.ceil(page.totalMovies / 10) } 
               onChange={handleChange} 
               size="small"
-              color="primary" 
+              color="warning" 
             />
           </Stack>
         }        

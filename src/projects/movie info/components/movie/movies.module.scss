@@ -1,0 +1,12 @@
+@import './../../../../Common/Styles/SASS/mixins.scss';
+
+.moviesContainer{
+    @include flex(center, space-around, wrap);
+    flex-direction: row;
+    gap: 30px;
+    padding: 15px 0;
+
+    @media(max-width: 767px){
+        width: 100%;
+    }
+}
