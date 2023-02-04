@@ -14,6 +14,7 @@ import CurrencyExchangeApp from './projects/currency exchange/CurrencyExchangeAp
 import MovieInfoApp from './projects/movie info/MovieInfoApp';
 import MovieDetail from './projects/movie info/components/movie detail/MovieDetail';
 import MovieList from './projects/movie info/components/movie list/MovieList';
+import FavoriteMovies from './projects/movie info/components/favorite movies/FavoriteMovies';
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
           {
             path: "movie_detail",
             element: <MovieDetail/>
+          },
+          {
+            path: "favorite_movie",
+            element: <FavoriteMovies/>
           }
         ]
       },

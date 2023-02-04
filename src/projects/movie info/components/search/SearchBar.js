@@ -4,6 +4,7 @@ import { movieNameFn, selectValues } from '../../../../features/movie info/movie
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';
 import style from './searchBar.module.scss'
+import { Link } from 'react-router-dom'
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -22,9 +23,11 @@ export default function SearchBar() {
             value={movie.name}
             onChange={movieName}
           />
-          <Badge badgeContent={4}>
-            <FavoriteIcon />
-          </Badge>
+          <Link to='/projects/movie/favorite_movie'>
+            <Badge badgeContent={4}>
+              <FavoriteIcon />
+            </Badge>
+          </Link>
         </div> 
     </div>
   )
