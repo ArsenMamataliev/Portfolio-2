@@ -8,7 +8,7 @@ import noPhoto from '../../../../assets/img/no photo.jpg'
 import style from './movieDetail.module.scss'
 import { useSelector } from 'react-redux';
 import { selectValues } from '../../../../features/movie info/movieInfo';
-import { Link } from 'react-router-dom';
+import BackToBtn from '../backToBtn/BackToBtn';
 
 export default function MovieDetail() {
   const [detail, setDetail] = useState([]);
@@ -22,7 +22,7 @@ export default function MovieDetail() {
   }, [movie.api_key, movie.id, movie.plot])
   return (
     <div className={style.wrapper}>
-      <Link className={style.link} to='/projects/movie/movie_list'> Back to movie list</Link>
+      <BackToBtn />
       <div className={style.movieName}>{detail['Title']}</div>
       <div className={style.container}>
         <div className={style.photo}>

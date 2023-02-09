@@ -1,0 +1,25 @@
+.favoriteContainer{
+    padding: 10px 20px;
+    .btnContainer{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        
+        button{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background:  #EF7914;
+            border-radius: 10px;
+            border: none;
+            text-decoration: none;
+            transition: all 1s ease;
+            color: #fff;
+    
+            &:hover{
+                background:  #8a4102;     
+            }
+        }
+    }
+}

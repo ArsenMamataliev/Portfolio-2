@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import style from './movie.module.scss';
 import noPhoto from './../../../../assets/img/no photo.jpg'
 import { useDispatch } from 'react-redux';
 import { idFn } from '../../../../features/movie info/movieInfo';
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import Tilt from 'react-parallax-tilt';
+// import Tilt from 'react-parallax-tilt';
 
-export default function Movie({movie}) {
-  const [data, setData] = useState([]);
+export default function Movie({movie, saveToLS}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const id = movie['imdbID'];
-  
-  useEffect(() => {
-    localStorage.setItem('dataKey', JSON.stringify(data));
-  }, [data]);
 
   const changeIdFn = () => {
     dispatch(idFn(id));
@@ -23,7 +18,7 @@ export default function Movie({movie}) {
   }
 
   return (
-    <Tilt>
+    
       <div className={style.movieContainer}> 
         <img src={movie['Poster'] !== 'N/A'? movie['Poster'] : noPhoto } 
           alt="movie_photo" 
@@ -35,11 +30,11 @@ export default function Movie({movie}) {
         </div>
         <div 
           className={style.favorite}
-          onClick={()=>setData(movie)}
+          onClick={() => saveToLS(movie)}
         >
           <FavoriteIcon color='error'/>
         </div>
       </div>
-    </Tilt>  
+    // </Tilt>  
   )
 }
