@@ -16,7 +16,6 @@ export default function MovieInfoApp() {
         .then((response)=> {
           dispatch(moviesFn(response.data['Search']));
           dispatch(totalMoviesFn(response.data.totalResults));
-          console.log(response.data);
       });
     }, [movie.name, movie.page, movie.plot, movie.id, movie.api_key, dispatch ])
     

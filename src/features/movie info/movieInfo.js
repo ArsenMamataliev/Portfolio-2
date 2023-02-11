@@ -8,7 +8,9 @@ const initialState = {
   plot: 'full',
   page: 1, 
   totalMovies: 0,
-  favorite: JSON.parse(localStorage.getItem('moviesLS')).length,
+  favoriteCount: 0,
+  favoriteStatus: false
+  
 };
 
 export const movieSlice = createSlice({
@@ -35,11 +37,14 @@ export const movieSlice = createSlice({
     },
     favoriteMoviesFn: (state, action) => {
       state.favorite = JSON.parse(localStorage.getItem('moviesLS')).length;
+    },
+    favoriteStatusFn: (state, action) => {
+      state.favoriteStatus = !action.payload;
     }
   }
 });
 
-export const { movieNameFn, moviesFn, pageFn, totalMoviesFn, plotFn, idFn, favoriteMoviesFn } = movieSlice.actions;
+export const { movieNameFn, moviesFn, pageFn, totalMoviesFn, plotFn, idFn, favoriteMoviesFn, favoriteStatusFn } = movieSlice.actions;
 
 export const selectValues = (state) => state.movieInfo;
 

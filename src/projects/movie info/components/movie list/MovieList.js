@@ -9,9 +9,9 @@ export default function MovieList() {
     <div>
       <SearchBar />
       <Suspense fallback={<Loader />}>
-        <Movies /> 
+        <Movies />
+        <PaginationControlled />
       </Suspense>
-     <PaginationControlled />
     </div>
   )
 }

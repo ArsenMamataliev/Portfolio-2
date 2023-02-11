@@ -1,13 +1,14 @@
 import React, {useState, useEffect } from 'react'
 import Movie from './Movie'
-import { useSelector } from 'react-redux';
-import { selectValues } from '../../../../features/movie info/movieInfo';
+import { useDispatch, useSelector } from 'react-redux';
+import { favoriteStatusFn, selectValues } from '../../../../features/movie info/movieInfo';
 import style from './movies.module.scss';
 
 export default function Movies() {
   const [moviesLS, setMoviesLS] = useState([]);
   const select = useSelector(selectValues);
-  
+  const dispatch = useDispatch();
+
   const setToLS = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Movies() {
     const movieExist = itemsFromLs.map(item => item['imdbID'] === id).includes(true);
     if(!movieExist){
       setMoviesLS([...moviesLS, movie]);
+      dispatch(favoriteStatusFn())
     }
   }
 
