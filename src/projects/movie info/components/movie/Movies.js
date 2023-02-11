@@ -1,30 +1,32 @@
 import React, {useState, useEffect } from 'react'
 import Movie from './Movie'
-import { useDispatch, useSelector } from 'react-redux';
-import { selectValues, favoriteMoviesFn } from '../../../../features/movie info/movieInfo';
+import { useSelector } from 'react-redux';
+import { selectValues } from '../../../../features/movie info/movieInfo';
 import style from './movies.module.scss';
 
 export default function Movies() {
+  const [moviesLS, setMoviesLS] = useState([]);
   const select = useSelector(selectValues);
-  const [items, setItems] = useState([]);
+  
+  const setToLS = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
   useEffect(() => {
-    const itemsFromLs = JSON.parse(localStorage.getItem('items'));
-    if(itemsFromLs === null && items.length === 0){
-      localStorage.setItem('items', JSON.stringify(items));
-    }else if(itemsFromLs.length >= 1 && items.length === 0){
-      setItems(itemsFromLs);
-      localStorage.setItem('items', JSON.stringify(items));
+    const moviesFromLS = JSON.parse(localStorage.getItem('moviesLS'));
+    if(moviesFromLS === null && moviesLS.length === 0){
+      setToLS('moviesLS', moviesLS)
+    }else if(moviesFromLS.length >= 1 && moviesLS.length === 0){
+      setMoviesLS(moviesFromLS);
+      setToLS('moviesLS', moviesLS)
     }
-    localStorage.setItem('items', JSON.stringify(items));
-  }, [items]);
+    setToLS('moviesLS', moviesLS)
+  }, [moviesLS]);
 
   const saveToLS = (movie) => {
     const id = movie['imdbID'];
-    const itemsFromLs = JSON.parse(localStorage.getItem('items'));
+    const itemsFromLs = JSON.parse(localStorage.getItem('moviesLS'));
     const movieExist = itemsFromLs.map(item => item['imdbID'] === id).includes(true);
     if(!movieExist){
-      setItems([...items, movie]);
+      setMoviesLS([...moviesLS, movie]);
     }
   }
 

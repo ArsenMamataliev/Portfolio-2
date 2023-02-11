@@ -5,12 +5,13 @@ import { useDispatch } from 'react-redux';
 import { idFn } from '../../../../features/movie info/movieInfo';
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-// import Tilt from 'react-parallax-tilt';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function Movie({movie, saveToLS}) {
+export default function Movie({movie, saveToLS, deleteFn}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const id = movie['imdbID'];
+  const pathName = window.location.pathname;
 
   const changeIdFn = () => {
     dispatch(idFn(id));
@@ -28,13 +29,21 @@ export default function Movie({movie, saveToLS}) {
           <p>{movie['Title']}</p>
           <p>{movie['Year']}</p> 
         </div>
-        <div 
-          className={style.favorite}
-          onClick={() => saveToLS(movie)}
-        >
-          <FavoriteIcon color='error'/>
-        </div>
-      </div>
-    // </Tilt>  
+        {
+          pathName !== "/projects/movie/favorite_movie" ?
+          <div 
+            className={style.icons}
+            onClick={() => saveToLS(movie)}
+          >
+           <FavoriteIcon />
+          </div> :
+          <div 
+            className={style.icons}
+            onClick={() => deleteFn(movie)}
+          >
+          <DeleteIcon />
+          </div>
+        }
+      </div>  
   )
 }

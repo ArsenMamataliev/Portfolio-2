@@ -20,6 +20,7 @@ export default function MovieDetail() {
         setDetail(response.data);
     });
   }, [movie.api_key, movie.id, movie.plot])
+
   return (
     <div className={style.wrapper}>
       <BackToBtn />

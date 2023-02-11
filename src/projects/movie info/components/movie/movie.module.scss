@@ -36,12 +36,17 @@
         }
     }
 
-    .favorite{
+    .icons{
         position: absolute;
         bottom: 0px;
         right: 5px;
+        color: red;
+        cursor: pointer;
+        
+        &:hover{
+            transform: scale(1.1);
+        }
     }
-
 
     @media(max-width: 820px){
         background: #010E21;

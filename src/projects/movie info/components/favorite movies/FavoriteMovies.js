@@ -6,37 +6,47 @@ import ClearAllIcon from '@mui/icons-material/ClearAll';
 import style2 from './favoriteMovies.module.scss'
 
 export default function FavoriteMovies() {
-  const [favorite, setFavorite] = useState([]);
+  const favMovie = JSON.parse(localStorage.getItem('moviesLS'));
+  const [favorite, setFavorite] = useState(favMovie);
 
   useEffect(() => {
-    const favorite = JSON.parse(localStorage.getItem('items'));
     if (favorite) {
       setFavorite(favorite);
     }
-  }, []);
+  }, [favorite]);
+
   const clearFn = () => {
     localStorage.clear()
-    window.location.reload();
+    setFavorite();
   }
+
+  const deleteFn = (movie) => {
+    const id = movie['imdbID'];
+    const res = favMovie.filter(item => item['imdbID'] !== id);
+    localStorage.setItem('moviesLS', JSON.stringify(res))
+    setFavorite(res);
+  }
+
   return (
     <div className={style2.favoriteContainer}>
       <div className={style2.btnContainer}>
         <BackToBtn />
         <button onClick={clearFn}>
-          <ClearAllIcon /> ClearAll
+          <ClearAllIcon /> Clear All
         </button>
       </div>
       <div className={style.moviesContainer}>
         {
-          favorite? favorite.map((item) =>{
+          favorite ? favorite.map((item) =>{
             return (
               <Movie 
                 key={item['imdbID']}
                 movie={item}
+                deleteFn={deleteFn}
               />
             )
           }
-          ): <p>No favorite movies</p>
+          ): ""
         }
       </div>
     </div>
