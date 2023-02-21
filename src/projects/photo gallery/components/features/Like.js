@@ -2,13 +2,9 @@ import React from 'react'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import Badge from '@mui/material/Badge';
 import { createApi } from 'unsplash-js'; 
-import axios from 'axios';
   
 export default function Like({id, likes, liked}) {
   const unsplash = createApi({accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A'});
-
-  
-
   return (
     <div>
         <Badge 

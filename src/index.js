@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "photo_gallery",
-        element: <GalleryApp />
+        element: <GalleryApp />,
       },
       {
         path: "booking",

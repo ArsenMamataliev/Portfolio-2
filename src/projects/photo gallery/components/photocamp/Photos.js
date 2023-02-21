@@ -5,7 +5,6 @@ import DescriptionIcon from '@mui/icons-material/Description'
 import Features from '../features/Features'
 
 export default function Photos({photo}) {
-
   return (
     <div className={style.photos}>
       <div className={style.modal}>
@@ -15,7 +14,7 @@ export default function Photos({photo}) {
         </div>
         <Features photo={photo} />
       </div>
-      <img className={style.img} src={photo.urls.regular} alt="photos" />
+      <img className={style.img} src={photo.urls.small} alt="photos" />
     </div>
   );
 }
