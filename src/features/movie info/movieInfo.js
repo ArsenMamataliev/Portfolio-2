@@ -6,7 +6,8 @@ const initialState = {
   movies: [],
   name: 'alone',
   plot: 'full',
-  page: 1, 
+  page: 1,
+  type: 'series',
   totalMovies: 0,
   favoriteCount: 0,
   favoriteStatus: false
@@ -32,6 +33,9 @@ export const movieSlice = createSlice({
     plotFn: (state, action) => {
       state.plot = action.payload;
     },
+    typeFn: (state, action) => {
+      state.type = action.payload;
+    },
     totalMoviesFn: (state, action) => {
       state.totalMovies = action.payload;
     },
@@ -44,7 +48,7 @@ export const movieSlice = createSlice({
   }
 });
 
-export const { movieNameFn, moviesFn, pageFn, totalMoviesFn, plotFn, idFn, favoriteMoviesFn, favoriteStatusFn } = movieSlice.actions;
+export const { movieNameFn, moviesFn, pageFn, totalMoviesFn, plotFn, typeFn, idFn, favoriteMoviesFn, favoriteStatusFn } = movieSlice.actions;
 
 export const selectValues = (state) => state.movieInfo;
 

@@ -4,3 +4,16 @@
     flex-flow: row wrap;
     align-items: center;
 }
+
+.filterBtn{
+    height: 39px;
+    width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border: 1px solid #CCCCCC;   
+    
+    &:hover{
+        opacity: 60%;
+    }
+}

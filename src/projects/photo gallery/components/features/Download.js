@@ -1,25 +1,15 @@
 import React from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
-import { createApi } from 'unsplash-js'; 
 
-export default function Download({id}) { 
-  const unsplash = createApi({accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A'});
-
-  function downloadFn(){
-      unsplash.photos.get({ photoId: id }).then(result => {
-      if (result.type === 'success') {
-        const photo = result.response;
-        unsplash.photos.trackDownload({
-          downloadLocation: photo.links.download_location,
-        });
-      }
-    });
-  }
+export default function Download({id}) {
   return (
     <div>
-        <DownloadIcon 
-          onClick = {downloadFn}
-        />
+      <a href="https://unsplash.com/photos/jbcY_yvsDzk/download?ixid=MnwzNzY1MTh8MXwxfHNlYXJjaHwxfHxuYXR1cmV8ZW58MHwwfHxibGFja3wxNjc2MjY0Mjcy"
+      download
+      target="_blank" rel="noreferrer"
+      >
+        <DownloadIcon />
+      </a>  
     </div>
   )
 }

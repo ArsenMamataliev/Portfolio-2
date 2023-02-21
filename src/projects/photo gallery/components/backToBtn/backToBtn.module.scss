@@ -1,19 +1,11 @@
-.btnContainer{
-    height: 35px;
-    width: 35px;
-    align-items: center;
-    background-color: #1976D2;
-    border-radius: 100%;
+.link{
+    height: 40px;
+    width: 40px;
+    background-color: #000;
+    text-decoration: none;
     display: flex;
-    justify-content: center;
-    cursor: pointer;
-   
-    &:hover{
-        background-color: #0352a1;
-    }
-
-    .link{
-        text-decoration: none;
-        color: white;       
-    }
+    align-items: center;
+    justify-content: center;      
 }
+
+

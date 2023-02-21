@@ -1,8 +1,8 @@
 import React from 'react'
 import style from './photos.module.scss' 
-import PersonIcon from '@mui/icons-material/Person';
-import DescriptionIcon from '@mui/icons-material/Description';
-import Features from '../features/Features';
+import PersonIcon from '@mui/icons-material/Person'
+import DescriptionIcon from '@mui/icons-material/Description'
+import Features from '../features/Features'
 
 export default function Photos({photo}) {
 

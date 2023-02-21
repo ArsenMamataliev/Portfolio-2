@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './movie.module.scss';
 import noPhoto from './../../../../assets/img/no photo.jpg'
-import { useDispatch, useSelector } from 'react-redux';
-import { idFn, selectValues } from '../../../../features/movie info/movieInfo';
+import { useDispatch } from 'react-redux';
+import { idFn } from '../../../../features/movie info/movieInfo';
 import { useNavigate } from "react-router-dom";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -10,7 +10,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 export default function Movie({movie, saveToLS, deleteFn}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const status = useSelector(selectValues); 
   const id = movie['imdbID'];
   const pathName = window.location.pathname;
 

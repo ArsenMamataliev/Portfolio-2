@@ -1,10 +1,14 @@
 import React from 'react'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import Badge from '@mui/material/Badge';
-// import { createApi } from 'unsplash-js'; 
-// import axios from 'axios';
+import { createApi } from 'unsplash-js'; 
+import axios from 'axios';
   
 export default function Like({id, likes, liked}) {
+  const unsplash = createApi({accessKey: '2auWItF6NxVxSWVj0pyLPon7G3NuwsOmQyZfxbYi07A'});
+
+  
+
   return (
     <div>
         <Badge 
@@ -16,7 +20,8 @@ export default function Like({id, likes, liked}) {
           }}  
         >
           <ThumbUpIcon
-            color = {liked ? "primary" : "danger"}
+            sx={{color: liked? "red" : "#fff"}}
+            onClick={()=> unsplash.photos.post(`/photos/${id}/like`)}
           />
         </Badge>
     </div>

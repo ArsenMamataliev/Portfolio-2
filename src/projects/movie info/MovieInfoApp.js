@@ -12,12 +12,12 @@ export default function MovieInfoApp() {
   const movie = useSelector(selectValues);
   
     useEffect(()=>{
-      axios.get(`http://www.omdbapi.com/?i=${movie.id}&s=${movie.name}&page=${movie.page}&plot=${movie.plot}&apikey=${movie.api_key}`)
+      axios.get(`http://www.omdbapi.com/?i=${movie.id}&s=${movie.name}&page=${movie.page}&plot=${movie.plot}&type=${movie.type}&apikey=${movie.api_key}`)
         .then((response)=> {
           dispatch(moviesFn(response.data['Search']));
           dispatch(totalMoviesFn(response.data.totalResults));
       });
-    }, [movie.name, movie.page, movie.plot, movie.id, movie.api_key, dispatch ])
+    }, [movie.name, movie.page, movie.plot, movie.id, movie.api_key, movie.type, dispatch ])
     
   return (
     <div className={style.wrapper}>
@@ -27,4 +27,4 @@ export default function MovieInfoApp() {
       </div>
     </div>
   )
-}
+}   

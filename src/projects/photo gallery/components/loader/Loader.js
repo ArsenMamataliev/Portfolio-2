@@ -9,7 +9,7 @@ export default function Loader() {
         <Rings
             height="80"
             width="80"
-            color="blue"
+            color="#C1302E"
             radius="12"
             wrapperStyle={{}}
             wrapperClass=""

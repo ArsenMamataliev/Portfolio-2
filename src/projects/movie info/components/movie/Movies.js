@@ -35,7 +35,7 @@ export default function Movies() {
   return (
     <div className={style.moviesContainer}>
       {
-        select.movies? select.movies.map((item) =>{
+        select.movies? select.movies.map((item) => {
           return (
             <Movie 
               key={item['imdbID']}
@@ -44,7 +44,7 @@ export default function Movies() {
             />
           )
         }
-        ): <p>No movies found</p>
+        ): <p>No {select.type} found</p>
       }
     </div>
   )

@@ -15,7 +15,7 @@ export default function Search() {
   
   return (
     <div className={style.searchBox}>
-        <SearchRoundedIcon color='primary' />
+        <SearchRoundedIcon sx={{color: "#000"}} />
         <input
           type="text"
           placeholder='Nature'

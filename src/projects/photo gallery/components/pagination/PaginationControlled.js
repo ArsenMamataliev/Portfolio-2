@@ -18,12 +18,11 @@ export default function PaginationControlled() {
     <div className={style.paginationBox}>
         {
           page.totalPages > 0 && 
-          <Stack spacing={1}>
+          <Stack spacing={2}>
             <Pagination 
               count={page.totalPages} 
               onChange={handleChange} 
               size="small"
-              color="primary" 
             />
           </Stack>
         }        
